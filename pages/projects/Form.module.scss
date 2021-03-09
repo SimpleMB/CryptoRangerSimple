@@ -1,0 +1,51 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: 50px auto 100px;
+  padding: 0 10px;
+  max-width: 1000px;
+
+  @media screen and (min-width: 700px) {
+    margin: 100px auto 200px;
+  }
+}
+
+.formLogo {
+  align-self: center;
+  height: 120px;
+  margin-bottom: 50px;
+
+  @media screen and (min-width: 700px) {
+    align-self: flex-start;
+    margin-bottom: 100px;
+  }
+}
+
+.formControls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.formSubmitBtn {
+  padding: 0 10px;
+  height: 60px;
+  background-color: hsla(211, 51, 50, 100%);
+  border: none;
+  border-radius: 10px;
+  color: hsla(0, 0, 100, 100%);
+  font-size: 18px;
+  font-weight: 900;
+  outline: none;
+  cursor: pointer;
+
+  @media screen and (min-width: 700px) {
+    width: 300px;
+  }
+}
+
+.formDeleteBtn {
+  @extend .formSubmitBtn;
+  background-color: hsla(10, 70, 50, 100%);
+  width: 100px;
+  font-size: 12px;
+}

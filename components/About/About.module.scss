@@ -1,0 +1,58 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  max-width: 1500px;
+  margin: 0px auto;
+}
+
+.aboutTopHeader,
+.aboutParagraph,
+.aboutBottomHeader {
+  align-self: center;
+  width: 80%;
+  text-align: center;
+  padding: 50px 0;
+}
+
+.aboutTopHeader {
+  font-size: 42px;
+  font-weight: 900;
+  color: hsla(0, 0, 45, 100%);
+
+  span {
+    color: hsla(3, 68, 50, 100%);
+  }
+
+  @media screen and (min-width: 1000px) {
+    align-self: flex-end;
+    width: 60%;
+    padding: 75px 0;
+    font-size: 64px;
+    text-align: right;
+  }
+}
+
+.aboutParagraph {
+  font-size: 20px;
+
+  @media screen and (min-width: 1000px) {
+    font-size: 24px;
+    width: 40%;
+    padding: 75px 0;
+  }
+}
+
+.aboutBottomHeader {
+  color: hsla(209, 61, 43, 100%);
+  font-weight: 900;
+  font-size: 42px;
+  text-align: center;
+
+  @media screen and (min-width: 1000px) {
+    align-self: flex-start;
+    width: 50%;
+    padding: 75px 0;
+    font-size: 64px;
+    text-align: left;
+  }
+}

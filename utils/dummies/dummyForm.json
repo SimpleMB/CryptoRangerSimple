@@ -1,0 +1,131 @@
+{
+  "formFields": [
+    {
+      "fieldId": "projectName",
+      "fieldName": "projectName",
+      "label": "Project's name:",
+      "value": "New project... from json",
+      "type": "small",
+      "required": true
+    },
+    {
+      "fieldId": "projectWeb",
+      "fieldName": "projectWeb",
+      "label": "Project's website:",
+      "value": "www.awesomjsonwebsite.com",
+      "type": "small",
+      "required": true
+    },
+    {
+      "fieldId": "projectLang",
+      "fieldName": "projectLang",
+      "label": "Choose language:",
+      "value": "free",
+      "type": "language",
+      "required": true
+    },
+    {
+      "fieldId": "projectPayment",
+      "fieldName": "projectPayment",
+      "label": "Payment Id (TXID):",
+      "value": "",
+      "type": "payment",
+      "required": false
+    },
+    {
+      "fieldId": "projectStart",
+      "fieldName": "projectStart",
+      "label": "When project starts:",
+      "value": "",
+      "type": "date",
+      "required": true
+    },
+    {
+      "fieldId": "whenPublished",
+      "fieldName": "whenPublished",
+      "label": "When review must be published?",
+      "value": "03-03-2077",
+      "type": "date",
+      "required": true
+    },
+    {
+      "fieldId": "simpleAbout",
+      "fieldName": "simpleAbout",
+      "label": "What is your project about? Explain it as simply as you can:",
+      "value": "",
+      "type": "big",
+      "rows": 4,
+      "required": false
+    },
+    {
+      "fieldId": "useExample",
+      "fieldName": "useExample",
+      "label": "Provide simple example of use:",
+      "value": "",
+      "type": "big",
+      "rows": 4,
+      "required": false
+    },
+    {
+      "fieldId": "products",
+      "fieldName": "products",
+      "label": "Main products:",
+      "value": "",
+      "type": "big",
+      "rows": 4,
+      "required": false
+    },
+    {
+      "fieldId": "importandToKnow",
+      "fieldName": "importandToKnow",
+      "label": "What are the most importand things in your project that your future customer NEED to know?",
+      "value": "",
+      "type": "big",
+      "rows": 4,
+      "required": false
+    },
+    {
+      "fieldId": "diffCompetitor",
+      "fieldName": "diffCompetitor",
+      "label": "What's the difference between your project and closest competitor?",
+      "value": "",
+      "type": "big",
+      "rows": 4,
+      "required": false
+    },
+    {
+      "fieldId": "futurePromotions",
+      "fieldName": "futurePromotions",
+      "label": "Future promotions / sales / air drops?",
+      "value": "",
+      "type": "big",
+      "rows": 4,
+      "required": false
+    },
+    {
+      "fieldId": "manyPeople",
+      "fieldName": "manyPeople",
+      "label": "How many people work on this project?",
+      "value": "",
+      "type": "small",
+      "required": false
+    },
+    {
+      "fieldId": "aboutOwner",
+      "fieldName": "aboutOwner",
+      "label": "About owner of the project?",
+      "value": "",
+      "type": "big",
+      "rows": 5,
+      "required": false
+    },
+    {
+      "fieldId": "linksDesc",
+      "fieldName": "linksDesc",
+      "label": "Importand links to place in the video description:",
+      "value": "",
+      "type": "big",
+      "required": false
+    }
+  ]
+}

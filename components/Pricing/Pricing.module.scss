@@ -1,0 +1,21 @@
+.pricing {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.pricingHeader {
+  padding: 75px 10px;
+  font-size: 64px;
+  font-weight: 900;
+  color: hsla(209, 61, 43, 100%);
+  text-align: left;
+}
+
+.pricingList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  justify-content: center;
+}

@@ -1,0 +1,19 @@
+.hiwHeader {
+  font-size: 30px;
+  font-weight: 900;
+  color: hsla(43, 100, 44, 100%);
+  text-align: right;
+
+  span {
+    font-size: 70px;
+    color: hsla(211, 51, 50, 100%);
+  }
+
+  @media screen and (min-width: 450px) {
+    font-size: 42px;
+
+    span {
+      font-size: 150px;
+    }
+  }
+}
