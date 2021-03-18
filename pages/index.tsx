@@ -1,28 +1,38 @@
-import About from '../components/About/About';
-import Clients from '../components/Clients/Clients';
-import Footer from '../components/Footer/Footer';
-import HeadIndex from '../components/HeadIndex/Head';
-import Hero from '../components/Hero/Hero';
-import HowItWorks from '../components/HowItWorks/HowItWorks';
+import { NextPage } from 'next';
+import { useEffect } from 'react';
 import Navigation from '../components/Navigation/Navigation';
-import Pricing from '../components/Pricing/Pricing';
-import SectionDivider from '../components/SectionDivider/SectionDivider';
 
-export default function Home() {
+interface BasicInformationProps {
+  projectName: string;
+  webAddress: string;
+  startDate: string;
+  publicationDate: string;
+  linksInDescription: string[] | string;
+}
+
+const BasicInformation: NextPage = () => {
+  const storageBasicInformation: BasicInformationProps = {
+    projectName: '',
+    webAddress: '',
+    startDate: '',
+    publicationDate: '',
+    linksInDescription: [],
+  };
+
+  useEffect(() => {
+    Object.keys(storageBasicInformation).forEach((key) => {
+      storageBasicInformation[key] = localStorage.getItem(key) || '';
+      console.log(key);
+    });
+    console.log(storageBasicInformation);
+  });
+
   return (
     <>
-      <HeadIndex />
-      <Navigation extended />
-      <Hero />
-      <SectionDivider side="right" />
-      <About />
-      <SectionDivider side="left" />
-      <Clients />
-      <SectionDivider side="right" />
-      <HowItWorks />
-      <SectionDivider side="left" />
-      <Pricing />
-      <Footer />
+      <Navigation />
+      hello
     </>
   );
-}
+};
+
+export default BasicInformation;

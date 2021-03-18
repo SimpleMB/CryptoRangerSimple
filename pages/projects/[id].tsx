@@ -2,7 +2,6 @@ import { GetServerSideProps, NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { formModel } from '../../models';
 import styles from './Form.module.scss';
 import { FormValues, Project, ApiRoutes } from '../../types';
 import FormInputList from '../../components/Form/FormInputList';

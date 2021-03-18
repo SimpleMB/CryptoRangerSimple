@@ -1,13 +1,8 @@
-import { SessionBase } from 'next-auth/_utils';
-
 // *****************************   Interfaces   ************************************
 
 /**
  * Session object extended with `id` property with user id
  */
-export interface SessionWithId extends SessionBase {
-  id: number;
-}
 
 /**
  * Inerface for `JWT` object
