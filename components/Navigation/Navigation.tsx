@@ -1,12 +1,19 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import styles from './Navigation.module.scss';
 
 interface Props {
   extended?: boolean;
 }
 
-const Navigation: React.FC<Props> = ({ extended }) => {
-  const active = true;
+enum PagePathnames {
+  paidReview = '/',
+  freeReview = '/freereview',
+  boringStuff = '/boringstuff',
+}
+
+const Navigation: React.FC<Props> = () => {
+  const { pathname } = useRouter();
 
   return (
     <nav className={styles.navigation}>
@@ -14,15 +21,43 @@ const Navigation: React.FC<Props> = ({ extended }) => {
 
       <ul className={styles.navList}>
         <li>
-          <Link href="/paidreview">
-            <a className={active && styles.activeLink}>Paid Review</a>
+          <Link href="/">
+            <a
+              className={
+                pathname === PagePathnames.paidReview
+                  ? styles.activeLink
+                  : undefined
+              }
+            >
+              Paid Review
+            </a>
           </Link>
         </li>
         <li>
-          <Link href="/freereview">Free Review</Link>
+          <Link href="/freereview">
+            <a
+              className={
+                pathname === PagePathnames.freeReview
+                  ? styles.activeLink
+                  : undefined
+              }
+            >
+              Free Review
+            </a>
+          </Link>
         </li>
         <li>
-          <Link href="/boringstuff">Boring Stuff</Link>
+          <Link href="/boringstuff">
+            <a
+              className={
+                pathname === PagePathnames.boringStuff
+                  ? styles.activeLink
+                  : undefined
+              }
+            >
+              Boring Stuff
+            </a>
+          </Link>
         </li>
       </ul>
     </nav>
@@ -30,4 +65,4 @@ const Navigation: React.FC<Props> = ({ extended }) => {
 };
 
 export default Navigation;
-// TODO : activated link when on proper site
+// TODO : DONE - activated link when on proper site
