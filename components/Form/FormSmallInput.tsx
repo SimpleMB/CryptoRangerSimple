@@ -10,8 +10,8 @@ type RefReturn =
 
 /* eslint-disable @typescript-eslint/indent */
 type InputProps = React.DetailedHTMLProps<
-  React.InputHTMLAttributes<HTMLInputElement>, // eslint-disable-line
-  HTMLInputElement // eslint-disable-line
+  React.InputHTMLAttributes<HTMLInputElement>,
+  HTMLInputElement
 > &
   Input & {
     label: string;
