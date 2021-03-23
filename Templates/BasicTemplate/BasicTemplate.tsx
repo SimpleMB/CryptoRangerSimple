@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import FormSmallInput from '../../components/Form/FormSmallInput';
+import Form from '../../components/Form/Form';
+import FormSmallInput from '../../components/FormSmallInput/FormSmallInput';
 
 interface BasicInformationProps {
   projectName: string;
@@ -11,7 +12,7 @@ interface BasicInformationProps {
 }
 
 const BasicTemplate = () => {
-  const { register, handleSubmit, watch } = useForm();
+  const { register, watch } = useForm();
 
   const storageBasicInformation: BasicInformationProps = {
     projectName: '',
@@ -30,7 +31,7 @@ const BasicTemplate = () => {
   });
 
   return (
-    <form onSubmit={undefined} className={undefined}>
+    <Form onSubmit={undefined}>
       <FormSmallInput
         register={register}
         fieldId="projectName"
@@ -71,7 +72,7 @@ const BasicTemplate = () => {
         type="small"
         value={storageBasicInformation.linksInDescription}
       />
-    </form>
+    </Form>
   );
 };
 

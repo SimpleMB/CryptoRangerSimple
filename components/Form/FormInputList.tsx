@@ -1,7 +1,7 @@
 import { Input, InputType } from '../../types';
-import FormBigInput from './FormBigInput';
-import FormLangInput from './FormLangInput';
-import FormSmallInput from './FormSmallInput';
+import FormBigInput from '../FormBigInput/FormBigInput';
+import FormLangInput from '../FormLangInput/FormLangInput';
+import FormSmallInput from '../FormSmallInput/FormSmallInput';
 
 type RefInputReturn =
   | string
