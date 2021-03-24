@@ -26,7 +26,7 @@ const FormBigInput: React.FC<InputProps> = ({
   value,
   register,
   required,
-  rows,
+  rows = 5,
 }) => {
   return (
     <div className={styles.bigInput}>
@@ -43,7 +43,7 @@ const FormBigInput: React.FC<InputProps> = ({
         ref={register({ required })}
         defaultValue={value}
         required={required}
-        rows={rows || 5}
+        rows={rows}
       />
     </div>
   );
