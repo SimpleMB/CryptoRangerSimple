@@ -12,18 +12,18 @@ interface FeaturesProps {
 const FeaturesTemplate = () => {
   const { register, watch } = useForm();
 
-  const storageExampleUse: FeaturesProps = {
+  const storageFeatures: FeaturesProps = {
     importandFeatures: '',
     differenceCompetitor: '',
     futurePromotions: '',
   };
 
   useEffect(() => {
-    Object.keys(storageExampleUse).forEach((key) => {
-      storageExampleUse[key] = localStorage.getItem(key) || '';
+    Object.keys(storageFeatures).forEach((key) => {
+      storageFeatures[key] = localStorage.getItem(key) || '';
       console.log(key);
     });
-    console.log(storageExampleUse);
+    console.log(storageFeatures);
   });
 
   return (
@@ -34,7 +34,7 @@ const FeaturesTemplate = () => {
         fieldName="importandFeatures"
         label="What are the most importand things in your project that your future customer NEED to know?"
         type="big"
-        value={storageExampleUse.importandFeatures}
+        value={storageFeatures.importandFeatures}
         rows={6}
       />
       <FormBigInput
@@ -43,7 +43,7 @@ const FeaturesTemplate = () => {
         fieldName="differenceCompetitor"
         label="What's the difference between your project and closest competitor?"
         type="big"
-        value={storageExampleUse.differenceCompetitor}
+        value={storageFeatures.differenceCompetitor}
         rows={6}
       />
       <FormBigInput
@@ -52,7 +52,7 @@ const FeaturesTemplate = () => {
         fieldName="futurePromotions"
         label="Future promotions / sales / air drops?"
         type="big"
-        value={storageExampleUse.futurePromotions}
+        value={storageFeatures.futurePromotions}
         rows={6}
       />
     </Form>
