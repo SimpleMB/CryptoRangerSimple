@@ -14,7 +14,7 @@ const TeamTemplate = () => {
   const { register, watch } = useForm();
 
   const storageExampleUse: TeamProps = {
-    teamNumber: '',
+    teamNumber: '1000',
     teamExperience: '',
     aboutOwner: '',
   };
@@ -31,26 +31,26 @@ const TeamTemplate = () => {
     <Form onSubmit={undefined}>
       <FormSmallInput
         register={register}
-        fieldId="importandFeatures"
-        fieldName="importandFeatures"
-        label="What are the most importand things in your project that your future customer NEED to know?"
+        fieldId="teamNumber"
+        fieldName="teamNumber"
+        label="How many people work on this project?"
         type="small"
         value={storageExampleUse.teamNumber}
       />
       <FormBigInput
         register={register}
-        fieldId="differenceCompetitor"
-        fieldName="differenceCompetitor"
-        label="What's the difference between your project and closest competitor?"
+        fieldId="teamExperience"
+        fieldName="teamExperience"
+        label="Team experience?"
         type="big"
         value={storageExampleUse.teamExperience}
         rows={6}
       />
       <FormBigInput
         register={register}
-        fieldId="futurePromotions"
-        fieldName="futurePromotions"
-        label="Future promotions / sales / air drops?"
+        fieldId="aboutOwner"
+        fieldName="aboutOwner"
+        label="About owner of the project?"
         type="big"
         value={storageExampleUse.aboutOwner}
         rows={6}

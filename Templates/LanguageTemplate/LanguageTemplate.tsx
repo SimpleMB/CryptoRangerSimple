@@ -29,17 +29,17 @@ const LanguageTemplate = () => {
     <Form onSubmit={undefined}>
       <FormLangInput
         register={register}
-        fieldId="importandFeatures"
-        fieldName="importandFeatures"
-        label="What are the most importand things in your project that your future customer NEED to know?"
+        fieldId="chosenLanguage"
+        fieldName="chosenLanguage"
+        label="Choose language of review:"
         type="small"
         value={storageLanguage.chosenLanguage}
       />
       <FormSmallInput
         register={register}
-        fieldId="futurePromotions"
-        fieldName="futurePromotions"
-        label="Future promotions / sales / air drops?"
+        fieldId="transactionId"
+        fieldName="transactionId"
+        label="Transaction ID - TxID"
         value={storageLanguage.transactionId}
       />
     </Form>
