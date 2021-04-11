@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import Form from '../../components/Form/Form';
 import FormLangInput from '../../components/FormLangInput/FormLangInput';
-import FormPaymentAddress from '../../components/FormPaymentAddress/FormPaymentAddress';
+import FormSelectCurrency from '../../components/FormPaymentAddress/FormSelectCurrency';
 import FormSmallInput from '../../components/FormSmallInput/FormSmallInput';
 
 interface LanguageProps {
@@ -38,7 +38,7 @@ const LanguageTemplate = () => {
         type="small"
         value={storageLanguage.chosenLanguage}
       />
-      <FormPaymentAddress
+      <FormSelectCurrency
         register={register}
         fieldId="paymentAddress"
         fieldName="paymentAddress"

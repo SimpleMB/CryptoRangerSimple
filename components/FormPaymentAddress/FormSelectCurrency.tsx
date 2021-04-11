@@ -1,5 +1,5 @@
 import { Input } from '../../types';
-import styles from './FormPaymentAddress.module.scss';
+import styles from './FormSelectCurrency.module.scss';
 
 type RefReturn =
   | string
@@ -19,7 +19,7 @@ type InputProps = React.DetailedHTMLProps<
   };
 /* eslint-enable @typescript-eslint/indent */
 
-const FormPaymentAddress: React.FC<InputProps> = ({
+const FormSelectCurrency: React.FC<InputProps> = ({
   fieldId,
   fieldName,
   label,
@@ -50,4 +50,4 @@ const FormPaymentAddress: React.FC<InputProps> = ({
   );
 };
 
-export default FormPaymentAddress;
+export default FormSelectCurrency;
