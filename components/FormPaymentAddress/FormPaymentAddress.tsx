@@ -28,16 +28,16 @@ const FormPaymentAddress: React.FC<InputProps> = ({
   required,
 }) => {
   return (
-    <div className={styles.smallInputDate}>
-      <label className={styles.smallInputLabel} htmlFor={fieldId}>
+    <div className={styles.select}>
+      <label className={styles.selectLabel} htmlFor={fieldId}>
         {label}{' '}
         {required ? (
-          <span className={styles.smallInputLabelSpan}>Required</span>
+          <span className={styles.selectLabelSpan}>Required</span>
         ) : null}
       </label>
       <select
         id={fieldName}
-        className={styles.smallInputField}
+        className={styles.selectField}
         name={fieldName}
         ref={register({ required })}
         defaultValue={value}
