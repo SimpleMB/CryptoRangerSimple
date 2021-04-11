@@ -2,10 +2,12 @@ import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import Form from '../../components/Form/Form';
 import FormLangInput from '../../components/FormLangInput/FormLangInput';
+import FormPaymentAddress from '../../components/FormPaymentAddress/FormPaymentAddress';
 import FormSmallInput from '../../components/FormSmallInput/FormSmallInput';
 
 interface LanguageProps {
   chosenLanguage: string;
+  chosenCurrency: string;
   transactionId: string;
 }
 
@@ -14,6 +16,7 @@ const LanguageTemplate = () => {
 
   const storageLanguage: LanguageProps = {
     chosenLanguage: '',
+    chosenCurrency: 'BTC',
     transactionId: '',
   };
 
@@ -35,11 +38,19 @@ const LanguageTemplate = () => {
         type="small"
         value={storageLanguage.chosenLanguage}
       />
+      <FormPaymentAddress
+        register={register}
+        fieldId="paymentAddress"
+        fieldName="paymentAddress"
+        label="Choose currency:"
+        value={storageLanguage.chosenCurrency}
+      />
       <FormSmallInput
         register={register}
         fieldId="transactionId"
         fieldName="transactionId"
         label="Transaction ID - TxID"
+        type="small"
         value={storageLanguage.transactionId}
       />
     </Form>
@@ -47,3 +58,5 @@ const LanguageTemplate = () => {
 };
 
 export default LanguageTemplate;
+
+// TODO: Use select list for language input

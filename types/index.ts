@@ -34,7 +34,7 @@ export interface Input {
   fieldName: string;
   label: string;
   value: string;
-  type: InputTypes;
+  type?: InputTypes;
   rows?: number;
   required?: boolean;
   checked?: boolean;
