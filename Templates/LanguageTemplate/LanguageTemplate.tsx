@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import Form from '../../components/Form/Form';
 import FormLangInput from '../../components/FormLangInput/FormLangInput';
-import FormSelectCurrency from '../../components/FormPaymentAddress/FormSelectCurrency';
+import FormSelectCurrency from '../../components/FormSelectCurrency/FormSelectCurrency';
 import FormSmallInput from '../../components/FormSmallInput/FormSmallInput';
 
 interface LanguageProps {
