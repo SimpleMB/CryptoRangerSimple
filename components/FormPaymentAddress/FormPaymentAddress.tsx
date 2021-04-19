@@ -11,12 +11,41 @@ const FormPaymentAddress: React.FC<PaymentProps> = ({
   ethAddress,
   ltcAddress,
 }) => {
+  function generateCopyPayment() {
+    if (btcAddress)
+      return {
+        label: 'BTC payment address:',
+        address: btcAddress,
+        buttonText: 'Click to copy BTC address',
+      };
+    if (ethAddress)
+      return {
+        label: 'ETH payment address:',
+        address: ethAddress,
+        buttonText: 'Click to copy ETH address',
+      };
+
+    if (ltcAddress)
+      return {
+        label: 'LTC payment address:',
+        address: ltcAddress,
+        buttonText: 'Click to copy LTC address',
+      };
+
+    return {
+      label: 'Please choose currency above',
+      address: 'Please choose currency above',
+      buttonText: 'Please choose currency above',
+    };
+  }
+  const { label, address, buttonText } = generateCopyPayment();
+
   return (
     <div className={styles.paymentField}>
-      <p className={styles.paymentLabel}>BTC payment address:</p>
-      <p className={styles.paymentAddress}>{btcAddress}</p>
+      <p className={styles.paymentLabel}>{label}</p>
+      <p className={styles.paymentAddress}>{address}</p>
       <button className={styles.btnCopy} type="button">
-        Click to copy BTC address
+        {buttonText}
       </button>
     </div>
   );
