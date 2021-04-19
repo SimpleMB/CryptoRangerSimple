@@ -45,6 +45,7 @@ const FormSelectCurrency: React.FC<InputProps> = ({
       >
         <option value="BTC">BTC</option>
         <option value="ETH">ETH</option>
+        <option value="LTC">LTC</option>
       </select>
     </div>
   );
