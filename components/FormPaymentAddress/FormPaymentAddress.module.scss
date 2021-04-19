@@ -1,0 +1,41 @@
+.paymentField {
+  width: 100%;
+  margin-bottom: 50px;
+
+  @media screen and (min-width: 550px) {
+    width: 500px;
+  }
+}
+
+.paymentLabel {
+  padding: 3px 7px;
+  font-size: 12px;
+  color: hsla(0, 0, 60, 100%);
+}
+
+.paymentAddress {
+  padding: 20px 7px;
+  color: hsla(0, 0, 40, 100%);
+}
+
+.btnCopy {
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  font-size: 14px;
+  font-weight: 700;
+  color: hsla(0, 0, 100, 100%);
+  background-color: hsla(0, 0, 80, 100%);
+  outline: none;
+
+  &.active {
+    background-color: hsla(104, 71, 65, 100%);
+  }
+
+  &:hover {
+    background-color: hsl(51, 100%, 50%);
+    box-shadow: 0 0 5px hsla(0, 0, 90, 100%);
+    cursor: pointer;
+  }
+}

@@ -11,7 +11,15 @@ const FormPaymentAddress: React.FC<PaymentProps> = ({
   ethAddress,
   ltcAddress,
 }) => {
-  return <div className={styles.paymentAddress}>Enter</div>;
+  return (
+    <div className={styles.paymentField}>
+      <p className={styles.paymentLabel}>BTC payment address:</p>
+      <p className={styles.paymentAddress}>{btcAddress}</p>
+      <button className={styles.btnCopy} type="button">
+        Click to copy BTC address
+      </button>
+    </div>
+  );
 };
 
 export default FormPaymentAddress;

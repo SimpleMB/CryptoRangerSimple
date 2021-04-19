@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import Form from '../../components/Form/Form';
 import FormLangInput from '../../components/FormLangInput/FormLangInput';
+import FormPaymentAddress from '../../components/FormPaymentAddress/FormPaymentAddress';
 import FormSelectCurrency from '../../components/FormSelectCurrency/FormSelectCurrency';
 import FormSmallInput from '../../components/FormSmallInput/FormSmallInput';
 
@@ -45,6 +46,7 @@ const LanguageTemplate = () => {
         label="Choose currency:"
         value={storageLanguage.chosenCurrency}
       />
+      <FormPaymentAddress btcAddress="X34rftG34234dsfsdfsdfsd343434dscgsdSdSDf" />
       <FormSmallInput
         register={register}
         fieldId="transactionId"
