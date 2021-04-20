@@ -5,6 +5,7 @@ import FormLangInput from '../../components/FormLangInput/FormLangInput';
 import FormPaymentAddress from '../../components/FormPaymentAddress/FormPaymentAddress';
 import FormSelectCurrency from '../../components/FormSelectCurrency/FormSelectCurrency';
 import FormSmallInput from '../../components/FormSmallInput/FormSmallInput';
+import { Currency, Languages } from '../../types';
 
 interface LanguageProps {
   chosenLanguage: string;
@@ -16,8 +17,8 @@ const LanguageTemplate = () => {
   const { register, watch } = useForm();
 
   const storageLanguage: LanguageProps = {
-    chosenLanguage: '',
-    chosenCurrency: 'BTC',
+    chosenLanguage: Languages.english,
+    chosenCurrency: Currency.BTC,
     transactionId: '',
   };
 
@@ -27,7 +28,8 @@ const LanguageTemplate = () => {
       console.log(key);
     });
     console.log(storageLanguage);
-  });
+    console.log(watch());
+  }, [storageLanguage]);
 
   return (
     <Form onSubmit={undefined}>

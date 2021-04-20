@@ -1,4 +1,4 @@
-import { Input } from '../../types';
+import { Input, Languages } from '../../types';
 import styles from './FormLangInput.module.scss';
 import prices from '../../utils/dummies/prices.json';
 
@@ -27,10 +27,10 @@ const FormLangInput: React.FC<InputProps> = ({
   register,
   required,
 }) => {
-  const isPolish = value.includes('polish');
-  const isEnglish = value.includes('english');
-  const isBoth = value.includes('both');
-  const isFree = value.includes('free');
+  const isPolish = value.includes(Languages.polish);
+  const isEnglish = value.includes(Languages.english);
+  const isEnglishAndPolish = value.includes(Languages.englishAndPolish);
+  const isFree = value.includes(Languages.free);
 
   return (
     <fieldset className={styles.langInput}>
@@ -48,7 +48,7 @@ const FormLangInput: React.FC<InputProps> = ({
             className={styles.langInputField}
             type="radio"
             name={fieldName}
-            defaultValue="english"
+            defaultValue={Languages.english}
             ref={register({ required })}
             defaultChecked={isEnglish}
           />
@@ -60,7 +60,7 @@ const FormLangInput: React.FC<InputProps> = ({
             className={styles.langInputField}
             type="radio"
             name={fieldName}
-            defaultValue="polish"
+            defaultValue={Languages.polish}
             ref={register({ required })}
             defaultChecked={isPolish}
           />
@@ -73,9 +73,9 @@ const FormLangInput: React.FC<InputProps> = ({
             className={styles.langInputField}
             type="radio"
             name={fieldName}
-            defaultValue="both"
+            defaultValue={Languages.englishAndPolish}
             ref={register({ required })}
-            defaultChecked={isBoth}
+            defaultChecked={isEnglishAndPolish}
           />
           {`English AND Polish (2 separate reviews) - ${
             prices.both.priceCents / 100
@@ -91,7 +91,7 @@ const FormLangInput: React.FC<InputProps> = ({
             className={styles.langInputField}
             type="radio"
             name={fieldName}
-            defaultValue="free"
+            defaultValue={Languages.free}
             ref={register({ required })}
             defaultChecked={isFree}
           />
