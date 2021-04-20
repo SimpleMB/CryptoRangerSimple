@@ -144,6 +144,8 @@ export enum Languages {
   english = 'english',
   german = 'german',
   russian = 'russian',
+  englishAndPolish = 'englishAndPolish',
+  free = 'free',
 }
 
 /**
