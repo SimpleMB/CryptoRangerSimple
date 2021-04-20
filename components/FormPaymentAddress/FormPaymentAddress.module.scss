@@ -29,13 +29,16 @@
   background-color: hsla(0, 0, 80, 100%);
   outline: none;
 
-  &.active {
-    background-color: hsla(104, 71, 65, 100%);
-  }
-
   &:hover {
     background-color: hsl(51, 100%, 50%);
     box-shadow: 0 0 5px hsla(0, 0, 90, 100%);
     cursor: pointer;
+  }
+}
+
+.btnActive {
+  background-color: hsla(104, 71, 65, 100%);
+  &:hover {
+    background-color: hsla(104, 71, 65, 100%);
   }
 }

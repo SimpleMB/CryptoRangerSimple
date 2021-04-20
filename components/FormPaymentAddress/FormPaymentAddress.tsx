@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import styles from './FormPaymentAddress.module.scss';
 
 interface PaymentProps {
@@ -11,40 +12,56 @@ const FormPaymentAddress: React.FC<PaymentProps> = ({
   ethAddress,
   ltcAddress,
 }) => {
-  function generateCopyPayment() {
-    if (btcAddress)
-      return {
-        label: 'BTC payment address:',
-        address: btcAddress,
-        buttonText: 'Click to copy BTC address',
-      };
-    if (ethAddress)
-      return {
-        label: 'ETH payment address:',
-        address: ethAddress,
-        buttonText: 'Click to copy ETH address',
-      };
+  const [currency, setCurrency] = useState<string>();
+  const [address, setAddress] = useState<string>(
+    'Please choose currency above'
+  );
+  const [buttonText, setButtonText] = useState<string>(
+    'Please choose currency above'
+  );
+  const [isCopied, setIsCopied] = useState<boolean>(false);
 
-    if (ltcAddress)
-      return {
-        label: 'LTC payment address:',
-        address: ltcAddress,
-        buttonText: 'Click to copy LTC address',
-      };
+  useEffect(() => {
+    if (btcAddress) {
+      setCurrency('BTC');
+      setAddress(btcAddress);
+    }
 
-    return {
-      label: 'Please choose currency above',
-      address: 'Please choose currency above',
-      buttonText: 'Please choose currency above',
-    };
-  }
-  const { label, address, buttonText } = generateCopyPayment();
+    if (ethAddress) {
+      setCurrency('ETH');
+      setAddress(ethAddress);
+    }
+
+    if (ltcAddress) {
+      setCurrency('LTC');
+      setAddress(ltcAddress);
+    }
+
+    setButtonText(`Click to copy ${currency} address`);
+  }, [btcAddress, ethAddress, ltcAddress, currency]);
+
+  const copyAddressToClipboard = () => {
+    navigator.clipboard.writeText(address).then(
+      () => {
+        setButtonText(`${currency} address copied!`);
+        setIsCopied(true);
+      },
+      () => setButtonText('Error! Copy address manually :(')
+    );
+  };
 
   return (
     <div className={styles.paymentField}>
-      <p className={styles.paymentLabel}>{label}</p>
+      <p className={styles.paymentLabel}>{`${currency} payment address:`}</p>
       <p className={styles.paymentAddress}>{address}</p>
-      <button className={styles.btnCopy} type="button">
+      <button
+        className={[
+          styles.btnCopy,
+          isCopied ? styles.btnActive : undefined,
+        ].join(' ')}
+        type="button"
+        onClick={copyAddressToClipboard}
+      >
         {buttonText}
       </button>
     </div>
