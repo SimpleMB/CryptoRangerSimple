@@ -1,47 +1,19 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { CurrencyAddress } from '../../types';
 import styles from './FormPaymentAddress.module.scss';
 
 interface PaymentProps {
-  btcAddress?: string;
-  ethAddress?: string;
-  ltcAddress?: string;
+  currency: string;
 }
 
-const FormPaymentAddress: React.FC<PaymentProps> = ({
-  btcAddress,
-  ethAddress,
-  ltcAddress,
-}) => {
-  const [currency, setCurrency] = useState<string>();
-  const [address, setAddress] = useState<string>(
-    'Please choose currency above'
-  );
+const FormPaymentAddress: React.FC<PaymentProps> = ({ currency }) => {
   const [buttonText, setButtonText] = useState<string>(
-    'Please choose currency above'
+    `Click to copy ${currency} address`
   );
   const [isCopied, setIsCopied] = useState<boolean>(false);
 
-  useEffect(() => {
-    if (btcAddress) {
-      setCurrency('BTC');
-      setAddress(btcAddress);
-    }
-
-    if (ethAddress) {
-      setCurrency('ETH');
-      setAddress(ethAddress);
-    }
-
-    if (ltcAddress) {
-      setCurrency('LTC');
-      setAddress(ltcAddress);
-    }
-
-    setButtonText(`Click to copy ${currency} address`);
-  }, [btcAddress, ethAddress, ltcAddress, currency]);
-
   const copyAddressToClipboard = () => {
-    navigator.clipboard.writeText(address).then(
+    navigator.clipboard.writeText(CurrencyAddress[currency]).then(
       () => {
         setButtonText(`${currency} address copied!`);
         setIsCopied(true);
@@ -53,7 +25,7 @@ const FormPaymentAddress: React.FC<PaymentProps> = ({
   return (
     <div className={styles.paymentField}>
       <p className={styles.paymentLabel}>{`${currency} payment address:`}</p>
-      <p className={styles.paymentAddress}>{address}</p>
+      <p className={styles.paymentAddress}>{CurrencyAddress[currency]}</p>
       <button
         className={[
           styles.btnCopy,

@@ -46,7 +46,7 @@ const LanguageTemplate = () => {
         label="Choose currency:"
         value={storageLanguage.chosenCurrency}
       />
-      <FormPaymentAddress btcAddress="X34rftG34234dsfsdfsdfsd343434dscgsdSdSDf" />
+      <FormPaymentAddress currency={storageLanguage.chosenCurrency} />
       <FormSmallInput
         register={register}
         fieldId="transactionId"
