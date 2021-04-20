@@ -157,14 +157,14 @@ export enum ReviewType {
 }
 
 /**
- * Possile types of Currencies avaiable for payment
+ * Possile types of Currencies aviable for payment
  *
- * @example Currency.btc // 'free'
+ * @example Currency.BTC // 'BTC'
  */
 export enum Currency {
-  btc = 'BTC',
-  eth = 'ETH',
-  ltc = 'LTC',
+  BTC = 'BTC',
+  ETH = 'ETH',
+  LTC = 'LTC',
 }
 
 /**
