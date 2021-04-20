@@ -168,6 +168,17 @@ export enum Currency {
 }
 
 /**
+ * Addresses for Currencies aviable for payment
+ *
+ * @example Currency.BTC // 'sadfsaf45dfadsfas35fdDFsa4r'
+ */
+export enum CurrencyAddress {
+  BTC = 'BTCdfdfa3435dsfdf3fdasf3ewfXD',
+  ETH = 'HelloETHdfsdafafasdf3345erCfe',
+  LTC = 'YoLTCAddressHereItisyowhelloH',
+}
+
+/**
  * API routes strings. Use with fetch
  *
  * @example ApiRoutes.projects // 'http://localhost:3000/api/projects'
