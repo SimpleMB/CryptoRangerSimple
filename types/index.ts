@@ -157,6 +157,17 @@ export enum ReviewType {
 }
 
 /**
+ * Possile types of Currencies avaiable for payment
+ *
+ * @example Currency.btc // 'free'
+ */
+export enum Currency {
+  btc = 'BTC',
+  eth = 'ETH',
+  ltc = 'LTC',
+}
+
+/**
  * API routes strings. Use with fetch
  *
  * @example ApiRoutes.projects // 'http://localhost:3000/api/projects'
