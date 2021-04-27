@@ -12,9 +12,16 @@ interface BreadCrumbsLinkProps {
 const BreadCrumbsLink = React.forwardRef<
   HTMLAnchorElement,
   BreadCrumbsLinkProps
->(({ children, href }, ref) => {
+>(({ children, href, active }, ref) => {
   return (
-    <a className={[styles.breadCrumbsLink].join(' ')} href={href} ref={ref}>
+    <a
+      className={[
+        styles.breadCrumbsLink,
+        active ? styles.breadCrumbActive : undefined,
+      ].join(' ')}
+      href={href}
+      ref={ref}
+    >
       {children}
     </a>
   );
