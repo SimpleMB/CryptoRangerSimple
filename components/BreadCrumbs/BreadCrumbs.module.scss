@@ -1,0 +1,17 @@
+.breadCrumbs {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 100px 50px 0;
+}
+
+.breadCrumbsList {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.breadCrumbsLink {
+  text-decoration: none;
+  color: hsla(0, 0, 60, 100%);
+}
