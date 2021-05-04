@@ -1,0 +1,11 @@
+.previousNextWrapper {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 50px 100px;
+}
+
+.previousNextBtn {
+  padding: 10px 20px;
+}
