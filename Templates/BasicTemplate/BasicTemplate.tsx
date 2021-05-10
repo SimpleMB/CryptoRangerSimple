@@ -27,8 +27,11 @@ const BasicTemplate = () => {
       storageBasicInformation[key] = localStorage.getItem(key) || '';
       console.log(key);
     });
-    console.log(storageBasicInformation);
-  });
+  }, [storageBasicInformation]);
+
+  useEffect(() => {
+    console.log(watch);
+  }, [watch]);
 
   return (
     <Form onSubmit={undefined}>
