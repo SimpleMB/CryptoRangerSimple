@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import Form from '../../components/Form/Form';
 import FormSmallInput from '../../components/FormSmallInput/FormSmallInput';
@@ -12,26 +12,37 @@ interface BasicInformationProps {
 }
 
 const BasicTemplate = () => {
-  const { register, watch } = useForm();
-
   const storageBasicInformation: BasicInformationProps = {
     projectName: '',
     webAddress: '',
     startDate: '',
     publicationDate: '',
-    linksInDescription: 'hello',
+    linksInDescription: '',
   };
+
+  const { register, watch, formState, setValue } = useForm();
 
   useEffect(() => {
     Object.keys(storageBasicInformation).forEach((key) => {
       storageBasicInformation[key] = localStorage.getItem(key) || '';
-      console.log(key);
+      setValue(key, localStorage.getItem(key));
     });
-  }, [storageBasicInformation]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [setValue]);
 
   useEffect(() => {
-    console.log(watch);
-  }, [watch]);
+    console.log('isDirty');
+    const watchedForm = watch();
+    const { isDirty } = formState;
+    for (const prop in watchedForm) {
+      if (isDirty) {
+        // next line is for eslint error purpose: no-prototype-builtins
+        if (Object.prototype.hasOwnProperty.call(watchedForm, prop)) {
+          localStorage.setItem(prop, watchedForm[prop]);
+        }
+      }
+    }
+  });
 
   return (
     <Form onSubmit={undefined}>
