@@ -98,6 +98,17 @@ export interface HowItWorksPointData {
   description: string;
 }
 
+/**
+ * Interface for `BasicInformationStorage` object used in Basic Information Template
+ */
+export interface BasicInformationStorage {
+  projectName: string;
+  webAddress: string;
+  startDate: string;
+  publicationDate: string;
+  linksInDescription: string;
+}
+
 // *****************************   Functions   ************************************
 
 /**

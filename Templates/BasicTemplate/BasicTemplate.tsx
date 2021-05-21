@@ -1,18 +1,11 @@
-import { useCallback, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import Form from '../../components/Form/Form';
 import FormSmallInput from '../../components/FormSmallInput/FormSmallInput';
-
-interface BasicInformationProps {
-  projectName: string;
-  webAddress: string;
-  startDate: string;
-  publicationDate: string;
-  linksInDescription: string;
-}
+import { BasicInformationStorage } from '../../types';
 
 const BasicTemplate = () => {
-  const storageBasicInformation: BasicInformationProps = {
+  const storageBasicInformation: BasicInformationStorage = {
     projectName: '',
     webAddress: '',
     startDate: '',
