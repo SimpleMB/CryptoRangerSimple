@@ -11,20 +11,34 @@ interface TeamProps {
 }
 
 const TeamTemplate = () => {
-  const { register, watch } = useForm();
-
   const storageExampleUse: TeamProps = {
     teamNumber: '1000',
     teamExperience: '',
     aboutOwner: '',
   };
 
+  const { register, watch, formState, setValue } = useForm();
+
   useEffect(() => {
     Object.keys(storageExampleUse).forEach((key) => {
       storageExampleUse[key] = localStorage.getItem(key) || '';
-      console.log(key);
+      setValue(key, localStorage.getItem(key));
     });
-    console.log(storageExampleUse);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [setValue]);
+
+  useEffect(() => {
+    console.log('isDirty');
+    const watchedForm = watch();
+    const { isDirty } = formState;
+    if (isDirty) {
+      for (const prop in watchedForm) {
+        // next line is for eslint error purpose: no-prototype-builtins
+        if (Object.prototype.hasOwnProperty.call(watchedForm, prop)) {
+          localStorage.setItem(prop, watchedForm[prop]);
+        }
+      }
+    }
   });
 
   return (

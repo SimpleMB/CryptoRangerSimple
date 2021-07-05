@@ -10,20 +10,34 @@ interface FeaturesProps {
 }
 
 const FeaturesTemplate = () => {
-  const { register, watch } = useForm();
-
   const storageFeatures: FeaturesProps = {
     importandFeatures: '',
     differenceCompetitor: '',
     futurePromotions: '',
   };
 
+  const { register, watch, formState, setValue } = useForm();
+
   useEffect(() => {
     Object.keys(storageFeatures).forEach((key) => {
       storageFeatures[key] = localStorage.getItem(key) || '';
-      console.log(key);
+      setValue(key, localStorage.getItem(key));
     });
-    console.log(storageFeatures);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [setValue]);
+
+  useEffect(() => {
+    console.log('isDirty');
+    const watchedForm = watch();
+    const { isDirty } = formState;
+    if (isDirty) {
+      for (const prop in watchedForm) {
+        // next line is for eslint error purpose: no-prototype-builtins
+        if (Object.prototype.hasOwnProperty.call(watchedForm, prop)) {
+          localStorage.setItem(prop, watchedForm[prop]);
+        }
+      }
+    }
   });
 
   return (
