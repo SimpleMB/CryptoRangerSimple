@@ -15,6 +15,7 @@ const FormPaymentAddress: React.FC<PaymentProps> = ({ currency }) => {
 
   useEffect(() => {
     setButtonText(`Click to copy ${currency} address`);
+    setIsCopied(false);
   }, [currency]);
 
   const copyAddressToClipboard = () => {
