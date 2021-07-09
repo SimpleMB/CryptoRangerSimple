@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Form from '../../components/Form/Form';
 import FormLangInput from '../../components/FormLangInput/FormLangInput';
@@ -14,6 +14,8 @@ interface LanguageProps {
 }
 
 const LanguageTemplate = () => {
+  const [currency, setCurrency] = useState<string>('BTCooo');
+
   const storageLanguage: LanguageProps = {
     chosenLanguage: Languages.english,
     chosenCurrency: Currency.BTC,
@@ -31,8 +33,8 @@ const LanguageTemplate = () => {
   }, [setValue]);
 
   useEffect(() => {
-    console.log('isDirty');
     const watchedForm = watch();
+    setCurrency(watchedForm.chosenCurrency);
     const { isDirty } = formState;
     if (isDirty) {
       for (const prop in watchedForm) {
@@ -61,7 +63,7 @@ const LanguageTemplate = () => {
         label="Choose currency:"
         value={storageLanguage.chosenCurrency}
       />
-      <FormPaymentAddress currency={storageLanguage.chosenCurrency} />
+      <FormPaymentAddress currency={currency} />
       <FormSmallInput
         register={register}
         fieldId="transactionId"

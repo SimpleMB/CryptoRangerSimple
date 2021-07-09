@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { CurrencyAddress } from '../../types';
 import styles from './FormPaymentAddress.module.scss';
 
@@ -7,10 +7,15 @@ interface PaymentProps {
 }
 
 const FormPaymentAddress: React.FC<PaymentProps> = ({ currency }) => {
+  console.log('currency:', currency);
   const [buttonText, setButtonText] = useState<string>(
     `Click to copy ${currency} address`
   );
   const [isCopied, setIsCopied] = useState<boolean>(false);
+
+  useEffect(() => {
+    setButtonText(`Click to copy ${currency} address`);
+  }, [currency]);
 
   const copyAddressToClipboard = () => {
     navigator.clipboard.writeText(CurrencyAddress[currency]).then(
@@ -41,3 +46,5 @@ const FormPaymentAddress: React.FC<PaymentProps> = ({ currency }) => {
 };
 
 export default FormPaymentAddress;
+
+// TODO: check if local storage will work with this component without gettein props
